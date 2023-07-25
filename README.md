@@ -1,4 +1,4 @@
-# error handler
+# error handler in js
 
 **try...catch 语句用于捕获 JavaScript 异常，包括：**
 
