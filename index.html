@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      const getId = () => {
+        const rand = Math.random();
+        return new Promise((resolve, reject) => {
+          setTimeout(() => {
+            if (rand > 0.5) {
+              resolve('abcd-1234');
+            } else {
+              reject('No ID!');
+            }
+          }, 500);
+        });
+      };
+
+      const getName = () => {
+        const rand = Math.random();
+        return new Promise((resolve, reject) => {
+          setTimeout(() => {
+            if (rand > 0.5) {
+              resolve('name-eric');
+            } else {
+              reject('No Name!');
+            }
+          }, 500);
+        });
+      };
+
+      const foo = async () => {
+        try {
+          const id = await getId();
+          console.log('id: ', id);
+          const name = await getName();
+          console.log('name: ', name);
+        } catch (err) {
+          console.error(err);
+        } finally {
+          console.log('finally, try-catch exec end');
+        }
+        console.log('foo exec end');
+      };
+      foo();
+    </script>
+  </body>
+</html>

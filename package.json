@@ -1,0 +1,15 @@
+{
+  "name": "error-handler-in-js",
+  "version": "1.0.0",
+  "description": "A demo for understanding try-catch in JS.",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js"
+  },
+  "keywords": [],
+  "author": "Knight174",
+  "license": "MIT",
+  "dependencies": {
+    "colors": "^1.4.0"
+  }
+}
