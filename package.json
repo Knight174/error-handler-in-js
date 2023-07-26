@@ -4,12 +4,17 @@
   "description": "A demo for understanding try-catch in JS.",
   "main": "index.js",
   "scripts": {
-    "start": "node index.js"
+    "start:js": "bun run ./codes/js/index.js",
+    "start:ts": "bun run ./codes/ts/index.ts",
+    "start:ts:split": "bun run ./codes/ts/split.ts"
   },
   "keywords": [],
   "author": "Knight174",
   "license": "MIT",
   "dependencies": {
     "colors": "^1.4.0"
+  },
+  "devDependencies": {
+    "@types/node": "^20.4.5"
   }
 }

@@ -24,29 +24,50 @@ try {
 }
 ```
 
+> 如果存在多个 try 代码块，每一个代码块依然遵循上面的规则。每一个 try 代码块中的异步操作如果抛出异常，JavaScript 引擎依然会跳转到 catch 代码块中，并执行错误处理逻辑。即上一个 try 中的代码出现异常并不影响下一个 try 的错误捕获。
+
+示例代码：
+
+```js
+try {
+  const result1 = await someAsyncOperation1(); // may throw error
+} catch (err) {
+  console.error(err);
+  // handle error
+}
+try {
+  const result2 = await someAsyncOperation2(); // may throw error
+} catch (err) {
+  console.error(err);
+  // handle error
+}
+```
+
 ## install
 
 ```bash
 npm i
+npm install -g bun # use bun to run codes
 ```
 
 ## start
 
 ```bash
-npm run start
-# or
-node index.js
+npm run start:js
+# or ts version
+npm run start:ts
+npm run start:ts:split
 ```
 
-You'll get three cases after executing my code.
+You'll get three cases after executing `npm run start:js` or `npm run start:ts`.
 
 - all passed
-  ![all passed](./images/image.png)
+  ![all passed](/images/image.png)
 - the first one error
-  ![the first error](./images/image-1.png)
+  ![the first error](/images/image-1.png)
 - the second one error
-  ![the second error](./images/image-3.png)
+  ![the second error](/images/image-3.png)
 - the third one error
-  ![the third error](./images/image-2.png)
+  ![the third error](/images/image-2.png)
 
-Thank you.
+You'll get 8 cases after executing `npm run start:ts:split`.

@@ -1,9 +1,11 @@
 const colors = require('colors');
 const fs = require('fs');
+const path = require('path');
 
-// get random file name, only './file.txt' is correct
+// get random file name, only correctPath is correct
 const getRandomFileName = () => {
-  const names = ['./file.txt', './file1.txt', './file2.txt'];
+  const correctPath = path.resolve(__dirname, 'file.txt');
+  const names = [correctPath, './file_x.txt', './file_y.txt'];
   const randomIndex = Math.floor(Math.random() * names.length);
   return names[randomIndex];
 };
